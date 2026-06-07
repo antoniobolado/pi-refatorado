@@ -5,10 +5,13 @@
                                  https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
 
-    <persistence-unit name="PImain" transaction-type="RESOURCE_LOCAL">
+    <persistence-unit name="IllexPU" transaction-type="RESOURCE_LOCAL">
         <!-- Bota as classes e provider aqui -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
+        <class>model.User</class>
+        <class>model.Goal</class>
+        <class>model.Register</class>
+    </persistence-unit>
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />
