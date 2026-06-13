@@ -57,7 +57,7 @@ public class GoalDAO {
         EntityManager em = emf.createEntityManager();
         try {
             return em.createQuery(
-                "SELECT m FROM Meta m WHERE m.usuario.id = :uid",
+                "SELECT m FROM Goal m WHERE m.usuario.id = :uid",
                 Goal.class)
                 .setParameter("uid", usuarioId)
                 .getResultList();

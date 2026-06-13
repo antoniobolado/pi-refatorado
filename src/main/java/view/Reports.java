@@ -33,20 +33,6 @@ public class Reports extends javax.swing.JFrame {
         jSplitPane1.setDividerLocation(150); // Define uma largura fixa inicial para o menu lateral
     }
 
-public void exportarCSV() {
-    try (java.io.FileWriter writer = new java.io.FileWriter("relatorio.csv")) {
-        // Cabeçalho
-        writer.write("Item,Valor,Data\n");
-        // Dados fake (depois você trocará pelo loop do seu Banco de Dados)
-        writer.write("Conserto Telhado,-500.00,10/12/2023\n");
-        writer.write("Voo SP,-1253.87,15/12/2023\n");
-        
-        javax.swing.JOptionPane.showMessageDialog(null, "Arquivo CSV gerado com sucesso!");
-    } catch (java.io.IOException e) {
-        e.printStackTrace();
-    }
-}
-
 
 private void configurarGraficoReal() {
 

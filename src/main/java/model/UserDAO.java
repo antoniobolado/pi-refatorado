@@ -12,15 +12,10 @@ public class UserDAO {
     public Optional<User> findByEmail(String email) {
         EntityManager em = UserDAO.em.createEntityManager();
         try {
-            TypedQuery<User> query = em.createQuery(
-                    "SELECT u FROM Usuario u WHERE u.email = :email",
-                    User.class
-            );
-            query.setParameter("email", email);
-            return query.getResultStream().findFirst();
+            TypedQuery<User> query = em.createQuery("SELECT u FROM User u WHERE u.email = :email", User.class);
+            return query.setParameter("email", email).getResultStream().findFirst();
         } finally {
-            em.close();
-        }
+            em.close();}
     }
 
     public void create(User usuario) {

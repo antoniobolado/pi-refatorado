@@ -8,7 +8,7 @@ import jakarta.persistence.*;
  * @author anton
  */
 @Entity
-@Table(name = "usuario")
+@Table(name = "Usuario")
 public class User {
 
     @Id

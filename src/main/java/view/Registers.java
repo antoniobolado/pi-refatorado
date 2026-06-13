@@ -105,7 +105,7 @@ private void excluirRegistroSelecionado() {
 private void atualizarSaldo() {
 
     int usuarioId = security.Session.getInstance().getUsuario().getId();
-    double saldo = new model.RegisterDAO().calcularSaldoPorUsuario(usuarioId);
+    double saldo = new model.RegisterService().calcularSaldoPorUsuario(usuarioId);
 
     lblDescricao.setText("Saldo Atual:");
 

@@ -28,7 +28,7 @@ public class RegisterDAO {
         EntityManager em = emf.createEntityManager();
         try {
             TypedQuery<Register> query = em.createQuery(
-                "SELECT r FROM Registro r WHERE r.usuario.id = :uid ORDER BY r.data DESC",
+                "SELECT r FROM Register r WHERE r.usuario.id = :uid ORDER BY r.data DESC",
                 Register.class
             );
             query.setParameter("uid", usuarioId);
@@ -38,22 +38,6 @@ public class RegisterDAO {
         }
     }
     
-public double calcularSaldoPorUsuario(int usuarioId) {
-    EntityManager em = emf.createEntityManager();
-    try {
-        Double total = em.createQuery(
-            "SELECT SUM(r.valor) FROM Registro r WHERE r.usuario.id = :uid",
-            Double.class
-        )
-        .setParameter("uid", usuarioId)
-        .getSingleResult();
-
-        return total != null ? total : 0.0;
-    } finally {
-        em.close();
-    }
-}
-
 public void delete(int id) {
     EntityManager em = emf.createEntityManager();
     EntityTransaction tx = em.getTransaction();

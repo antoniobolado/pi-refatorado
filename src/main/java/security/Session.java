@@ -11,9 +11,7 @@ public class Session {
     private Session() {}
 
     public static Session getInstance() {
-        if (instance == null) {
-            instance = new Session();
-        }
+        if (instance == null) instance = new Session();
         return instance;
     }
 

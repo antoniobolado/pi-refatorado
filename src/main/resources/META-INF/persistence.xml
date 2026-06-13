@@ -11,7 +11,7 @@
         <class>model.User</class>
         <class>model.Goal</class>
         <class>model.Register</class>
-    </persistence-unit>
+    
 
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" />

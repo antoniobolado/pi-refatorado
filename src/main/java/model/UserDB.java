@@ -12,7 +12,7 @@ public class UserDB {
     try {
         // 1. Busca o usuário apenas pelo e-mail
         TypedQuery<User> query = em.createQuery(
-            "SELECT u FROM Usuario u WHERE u.email = :email", User.class);
+            "SELECT u FROM User u WHERE u.email = :email", User.class);
         query.setParameter("email", usuarioDigitado.getEmail());
         
         User usuarioBanco = query.getSingleResult();
